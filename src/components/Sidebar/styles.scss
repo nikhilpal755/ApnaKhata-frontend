@@ -1,0 +1,9 @@
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
+$sidebar-bg-color: white;
+$sidebar-color: white;
+.sidebar {
+  background-color: $sidebar-bg-color;
+  color: $sidebar-color;
+  z-index: 100;
+}
