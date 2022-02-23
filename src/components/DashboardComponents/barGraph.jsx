@@ -16,7 +16,7 @@ export default function BarGraph({ paymentHistory }) {
         paymentAmounts.push(payment?.amountPaid);
     })
 
-    console.log(paymentDates, paymentAmounts)
+    // console.log(paymentDates, paymentAmounts)
 
     const series = [{
         name: 'Payment Received',
