@@ -102,3 +102,4 @@ $ npm install (to install server-side dependencies)
 
 ## ScreenShots
 1) Home Page ![HomePage](https://res.cloudinary.com/dcfg8797j/image/upload/v1645639800/home_srgjf8.png)
+2) Dashboard  ![dashboard](https://res.cloudinary.com/dcfg8797j/image/upload/v1645639812/Dashboard_ox7pyg.png)
