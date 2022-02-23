@@ -61,7 +61,6 @@ const useStyles = makeStyles(() => ({
 }))
 
 
-const client_id = "811512397212-kmc1p94edsuhuj2q5cufpd3j9tuktd1e.apps.googleusercontent.com";
 const initialState = {
     firstName : '',
     lastName : '',
@@ -204,7 +203,7 @@ export default function Login() {
 
                                 <div className={classes.btn}>
                                     <GoogleLogin
-                                        clientId={client_id}
+                                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                         render={renderProps => (
                                             <GoogleButton
                                                 onClick={renderProps.onClick}
