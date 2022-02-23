@@ -118,7 +118,7 @@ const InvoiceDetails = () => {
     // create and downLoad invoice pdf
     const downLoadClick = () => {
         setDownLoadStatus('loading');
-        axios.post(`http://localhost:8000/create-pdf`, {
+        axios.post(`https://apnakhata01.herokuapp.com/create-pdf`, {
             name: invoice?.client?.name,
             address: invoice?.client?.address,
             email: invoice?.client?.email,
@@ -138,7 +138,7 @@ const InvoiceDetails = () => {
             totalAmountReceived: parseFloat(totalPaid).toFixed(2),
             balanceDue: parseFloat(invoice?.total - totalPaid).toFixed(2),
             company: profile,
-        }).then(() => axios.get('http://localhost:8000/get-pdf', { responseType: 'blob' }))
+        }).then(() => axios.get('https://apnakhata01.herokuapp.com/get-pdf', { responseType: 'blob' }))
             .then((res) => {
                 const pdf = new Blob([res.data], { type: 'application/pdf' });
                 console.log(pdf)
@@ -154,7 +154,7 @@ const InvoiceDetails = () => {
     // send to customer
     const sendInvoice = () => {
         setsendInvoiceStatus('loading');
-        axios.post('http://localhost:8000/send-pdf', {
+        axios.post('https://apnakhata01.herokuapp.com/send-pdf', {
             name: invoice?.client?.name,
             address: invoice?.client?.address,
             phone: invoice?.client?.phone,
