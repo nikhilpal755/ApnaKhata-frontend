@@ -100,5 +100,5 @@ $ npm install (to install server-side dependencies)
 & npm start (to start the server)
 ```
 
-#ScreenShots
-1) Home Page(https://res.cloudinary.com/dcfg8797j/image/upload/v1645639800/home_srgjf8.png)
+## ScreenShots
+1) Home Page ![HomePage](https://res.cloudinary.com/dcfg8797j/image/upload/v1645639800/home_srgjf8.png)
