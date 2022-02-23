@@ -32,13 +32,13 @@ export default function Home() {
            
 
         
-            <div className="main-container" style={{ color: 'purple', margin: '4%' }}>
+            <div className="main-container" style={{ color: 'rgb(17, 14, 46)', margin: ' 2% 4%', fontFamily: "fantasy", letterSpacing: '3px', fontWeight: 'lighter', fontSize: '30px' }}>
                 
-                <div className="main-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <h1 style={{ padding: '4%' }}>Best Record Keeper and Invoicing Application for freelancers and Small Buisnesses</h1>
+                <div className="main-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding : '3%' }}>  
+                    <h1 style={{ padding: '4%' }}>THE ONE STOP DESTINATION FOR SMALL BUISNESSES AND FREELANCERS</h1>
 
 
-                    <img src={require('../../images/invoice2.png')} alt="" style={{ height: '500px' }} className='vert-move' />
+                    <img src={"https://res.cloudinary.com/dcfg8797j/image/upload/v1645624299/Untitled_design_4_uygf42.png"} alt="" style={{ height: '500px' }} className='vert-move' />
 
                 </div>
             </div>

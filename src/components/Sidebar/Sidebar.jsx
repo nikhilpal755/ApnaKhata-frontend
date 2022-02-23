@@ -55,7 +55,7 @@ export default function SideBar() {
 
                         {expandCollapse && <>
 
-                            <h1 style={{ marginLeft: '20px', cursor: 'pointer' }} onClick={() => navigate('/dashboard')}> <img src={require('../../images/logo2.png')} alt="" style={{width: '140px' , height: '50px',marginBottom: '10px' , marginTop: '-10px'}}/></h1>
+                            <h1 style={{ marginLeft: '20px', cursor: 'pointer' }} onClick={() => navigate('/dashboard')}> <img src={"https://res.cloudinary.com/dcfg8797j/image/upload/v1645620219/logo2_drffga.png"} alt="" style={{width: '140px' , height: '50px',marginBottom: '10px' , marginTop: '-10px'}}/></h1>
 
                         </>}
                         <Button onClick={expandCollapseSidebar} style={{ color: 'white', marginBottom: '30px', marginTop: '20px', marginLeft: '8px' }}>
@@ -84,7 +84,10 @@ export default function SideBar() {
                     <Menu iconShape="circle">
                         <MenuItem icon={<SettingsIcon />} onClick={() => navigate('/settings')}><Typography variant='overline'> Settings </Typography></MenuItem>
 
+                        {/* <a href='h'> */}
+
                         <MenuItem icon={<GitHubIcon />}> <Typography variant='overline'> Source Code</Typography> </MenuItem>
+                        {/* </a> */}
 
 
                     </Menu>

@@ -4,7 +4,7 @@ export const SignUp = async(formdata, dispatch) =>{
     try{
         // storing user into database
          const {data} =  await api.signUp(formdata);
-         console.log(data);
+        //  console.log(data);
          // storing user into local storage
          dispatch({type : 'AUTH', data :data});
 
@@ -22,7 +22,7 @@ export const SignUp = async(formdata, dispatch) =>{
     
               }
               );
-              console.log(newProfile);
+            //   console.log(newProfile);
               dispatch({type : 'CREATE_PROFILE', payload : newProfile});
          }catch(err){
              console.log(err);
@@ -55,5 +55,23 @@ export const SignIn = async(formdata ,dispatch ) =>{
     }catch(err){
         console.log(err);
 
+    }
+}
+
+export const forgotPassword = (formdata) => async(dispatch) =>{
+    try{
+        await api.forgot(formdata);;
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export const resetPassword = (token, form, navigate) => async(dispatch) =>{
+    try{
+        await api.reset(form, token);
+        navigate('/login');
+
+    }catch(err){
+        console.log(err);
     }
 }

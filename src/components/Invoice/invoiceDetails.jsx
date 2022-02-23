@@ -122,7 +122,7 @@ const InvoiceDetails = () => {
             name: invoice?.client?.name,
             address: invoice?.client?.address,
             email: invoice?.client?.email,
-            phone: invoice?.client?.phone,
+            phoneNumber: invoice?.client?.phoneNumber,
             dueDate: invoice?.dueDate,
             currency: invoice?.currency,
             date: invoice.createdAt,
@@ -137,7 +137,7 @@ const InvoiceDetails = () => {
             items: invoice?.items,
             totalAmountReceived: parseFloat(totalPaid).toFixed(2),
             balanceDue: parseFloat(invoice?.total - totalPaid).toFixed(2),
-            company: company,
+            company: profile,
         }).then(() => axios.get('http://localhost:8000/get-pdf', { responseType: 'blob' }))
             .then((res) => {
                 const pdf = new Blob([res.data], { type: 'application/pdf' });
@@ -167,12 +167,13 @@ const InvoiceDetails = () => {
             total: parseFloat(invoice?.total).toFixed(2),
             type: invoice?.type,
             status: invoice?.status,
+            currency: invoice?.currency,
             vat: invoice?.vat,
             rates: invoice?.rates,
             items: invoice?.items,
             totalAmountReceived: parseFloat(totalPaid).toFixed(2),
             balanceDue: parseFloat(invoice?.total - totalPaid).toFixed(2),
-            company: company,
+            company: profile,
         })
             .then(() => setsendInvoiceStatus('success'))
             .catch(err => {

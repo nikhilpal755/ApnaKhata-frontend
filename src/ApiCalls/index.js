@@ -18,11 +18,11 @@ API.interceptors.request.use((req) =>{
 export const signUp = (formdata) => API.post('/users/signup', formdata);
 export const signIn = (formdata) => API.post('/users/signin', formdata);
 export const forgot = (formdata) => API.post('/users/forgot', formdata);
-export const reset = (formdata) => API.post('/users/reset', formdata);
+export const reset = (form, token) => API.post(`users/reset/${token}`, form);
 
 
 
-// Client api requests
+//2 Client api requests
 export const addClient = (client) => API.post('/clients',client);
 export const getClient = (id) => API.get(`/clients/${id}`);
 export const getClientsByPage = (page) => API.get(`/clients?page=${page}`);

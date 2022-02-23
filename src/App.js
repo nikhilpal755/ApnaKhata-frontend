@@ -8,6 +8,7 @@ import Invoices from './pages/Invoices/invoices';
 import Clients from './pages/Clients/clients';
 import Profile from "./components/Settings/buisnessProfile";
 import ForgotPassword from './components/Password/forgotPassword';
+import ResetPassword from "./components/Password/resetPassword";
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
           <Route path='invoices' element={<Invoices/>}></Route>
           <Route path='customers' element={<Clients/>}></Route>
           <Route path='settings' element={<Profile/>}></Route>
-          <Route path='forgot' element={<ForgotPassword/>}></Route>
+          <Route path='login/forgot' element={<ForgotPassword/>}></Route>
+          <Route path='reset/:token' element={<ResetPassword/>}></Route>
 
         </Routes>
       </Router>

@@ -95,7 +95,7 @@ export default function Dashboard() {
     }
 
   }, [location, user])
-
+  
   // payement history - using reactApexCharts, 
 
 
@@ -173,7 +173,7 @@ export default function Dashboard() {
                             <TableCell><button>{record?.paidBy?.charAt(0)}</button></TableCell>
                             <TableCell>{record.paidBy}</TableCell>
                             <TableCell>{moment(record.datePaid).format('MMMM Do YYYY')}</TableCell>
-                            <TableCell><h3 style={{ color: '#00A86B', fontSize: '14px' }} >{parseFloat( record.amountPaid).toFixed(2)}</h3></TableCell>
+                            <TableCell><h3 style={{ color: '#00A86B', fontSize: '14px' }} > {parseFloat( record.amountPaid).toFixed(2)}</h3></TableCell>
                             <TableCell>{record.paymentMode}</TableCell>
                             <TableCell>{record.note}</TableCell>
                           </TableRow>

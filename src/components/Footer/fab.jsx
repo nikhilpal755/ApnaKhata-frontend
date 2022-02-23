@@ -13,7 +13,7 @@ import AddClient from '../Invoice/addClient';
 export default function FabFooter() {
 
     const location = useLocation();
-    const mainStylesButton = {backgroundColor : 'purple'};
+    const mainStylesButton = {backgroundColor : '#4f3e75'};
 
     const [open, setOpen] = React.useState(false);
     return (

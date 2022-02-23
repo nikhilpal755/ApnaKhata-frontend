@@ -57,7 +57,7 @@ export default function BuisnessLogo({form, setForm}) {
     <>
         <div
           {...getRootProps()}
-          className={"dropzone"}
+          className={`dropzone ${isDragActive ? "active" : ""}`}
         >
           <input {...getInputProps()} />
         Upload Logo

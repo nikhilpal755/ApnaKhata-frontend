@@ -38,9 +38,7 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     marginTop: '30px'
   },
-  googleButton: {
-    // marginBottom: theme.spacing(2),
-  },
+
 }));
 
 
@@ -53,7 +51,7 @@ export default function Form({ user }) {
 
   const [switchState, setSwitchState] = useState(0);
 
-  const [form, setForm] = useState({
+  const [formdata, setFormdata] = useState({
     name: '',
     email: '',
     buisnessName: '',
@@ -71,55 +69,46 @@ export default function Form({ user }) {
 
   useEffect(() => {
     if (profiles) {
-      setForm(profiles[0])
+      setFormdata(profiles[0])
     }
   }, [profiles])
 
   // console.log(form?.logo)
 
-  const handleSubmit = () =>{
-    dispatch(updateProfile(form._id, form))
+  const handleSubmit = () => {
+    dispatch(updateProfile(formdata._id, formdata))
     setSwitchState(0)
 
   }
 
-  const handleChange = (e) =>{
-    console.log(e.target.name, e.target.value)
-    setForm({...form , [e.target.name] : e.target.value})
+  const handleChange = (e) => {
+    // console.log(e.target.name, e.target.value)
+    setFormdata({ ...formdata, [e.target.name]: e.target.value })
   }
 
   return (
     <>
-      {switchState === 0 && <>
-        <Container component="main" maxWidth="sm">
-          <Paper className={classes.paper} elevation={2} >
-            <Avatar style={{ width: '100px', height: '100px', margin: '30px' }} src={form?.logo} alt="" className={classes.Avatar} >
-            </Avatar>
+      <Container component="main" maxWidth="sm">
+        <Paper className={classes.paper} elevation={2} >
+          <Avatar style={{ width: '100px', height: '100px', margin: '30px' }} src={formdata?.logo} alt="hai nhi" className={classes.avatar} >
+          </Avatar>
+          {switchState === 0 && <>
             {/* {console.log(form)} */}
-            {form?.buisnessName && <p>{form?.buisnessName}</p> }
-            {form?.buisnessAddress && <p>{form?.buisnessAddress}</p> }
-            {form?.phoneNumber && <p>{form?.phoneNumber}</p> }
-            {form?.email && <p>{form?.email}</p> }
-          
-            <Button variant="outlined" style={{ margin: '30px', padding: '15px 30px' }} onClick={() => setSwitchState(1)}>Edit Profile</Button>
-          </Paper>
-        </Container>
-      </>}
+            {formdata?.buisnessName && <p>{formdata?.buisnessName}</p>}
+            {formdata?.buisnessAddress && <p>{formdata?.buisnessAddress}</p>}
+            {formdata?.phoneNumber && <p>{formdata?.phoneNumber}</p>}
+            {formdata?.email && <p>{formdata?.email}</p>}
 
-      {switchState === 1 && <>
-        <Container component="main" maxWidth="sm">
-          <Paper className={classes.paper} elevation={1} >
-            <Avatar style={{ width: '100px', height: '100px' }} src={form?.logo} alt="" className={classes.avatar}>
-            </Avatar>
-            {/* {console.log(form?.logo)} */}
-            {/* <img src={form?.logo} alt="" style={{ width: '100px', height: '100px', borderRadius: '50%'}}/> */}
+            <Button variant="outlined" style={{ margin: '30px', padding: '15px 30px' }} onClick={() => setSwitchState(1)}>Edit Profile</Button>
+          </>}
+        {switchState === 1 && <>
             <form className={classes.form} onSubmit={handleSubmit}>
               <Grid container spacing={2}>
-                <BuisnessLogo form={form} setForm={setForm}/>
-                <CustomField name="email" label="Email Address" handleChange={handleChange} type="email" half value={form?.email} />
-                <CustomField name="phoneNumber" label="Phone Number" handleChange={handleChange} type="text" half value={form?.phoneNumber} />
-                <CustomField name="buisnessName" label="Business Name" handleChange={handleChange} type="text" value={form?.buisnessName} />
-                <CustomField name="buisnessAddress" label="Contact Address" handleChange={handleChange} type="text" value={form?.buisnessAddress} />
+                <BuisnessLogo form={formdata} setForm={setFormdata} />
+                <CustomField name="email" label="Email Address" handleChange={handleChange} type="email" half value={formdata?.email} />
+                <CustomField name="phoneNumber" label="Phone Number" handleChange={handleChange} type="text" half value={formdata?.phoneNumber} />
+                <CustomField name="buisnessName" label="Business Name" handleChange={handleChange} type="text" value={formdata?.buisnessName} />
+                <CustomField name="buisnessAddress" label="Contact Address" handleChange={handleChange} type="text" value={formdata?.buisnessAddress} />
               </Grid>
               <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                 Update Settings
@@ -127,10 +116,19 @@ export default function Form({ user }) {
               <Grid container justifyContent="flex-end">
               </Grid>
             </form>
-          </Paper>
-        </Container>
+        </>}
+        </Paper>
+      </Container>
 
-      </>}
+         {/* <Container component="main" maxWidth="sm">
+           <Paper className={classes.paper} elevation={1} >
+             <Avatar style={{ width: '100px', height: '100px' }} src={form?.logo} alt="" className={classes.avatar}>
+             </Avatar>
+          
+             </form>
+           </Paper>
+         </Container>
+ */}
 
 
     </>
