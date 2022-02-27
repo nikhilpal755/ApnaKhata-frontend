@@ -175,6 +175,7 @@ const InvoiceDetails = () => {
             totalAmountReceived: parseFloat(totalPaid).toFixed(2),
             balanceDue: parseFloat(invoice?.total - totalPaid).toFixed(2),
             company: profile,
+            link: `https://apnakhata.netlify.app/invoice/${invoice?._id}`
         })
             .then(() => setsendInvoiceStatus('success'))
             .catch(err => {
