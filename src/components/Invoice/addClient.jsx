@@ -80,7 +80,10 @@ export default function AddClient({ open, setOpen , client }) {
 
     clearState();
     setOpen(false);
-    window.location.reload();
+    
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
 
 
 
