@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const API = axios.create({baseURL : 'https://apnakhata01.herokuapp.com/'});
+const API = axios.create({baseURL : 'https://apnakhata01.herokuapp.com'});
 
 // interceptors to check if user is logged in or not
 API.interceptors.request.use((req) =>{
@@ -20,10 +20,9 @@ export const reset = (form, token) => API.post(`users/reset/${token}`, form);
 
 
 
-//2 Client api requests
+// Client api requests
 export const addClient = (client) => API.post('/clients',client);
 export const getClient = (id) => API.get(`/clients/${id}`);
-export const getClientsByPage = (page) => API.get(`/clients?page=${page}`);
 export const getClientsByUser =(searchQuery) => API.get(`/clients?searchQuery=${searchQuery}`);
 export const updateClient = (id, updatedClient) => API.patch(`/clients/${id}`, updatedClient);
 export const deleteClient = (id) => API.delete(`/clients/${id}`);
@@ -33,7 +32,6 @@ export const deleteClient = (id) => API.delete(`/clients/${id}`);
 export const getAllProfiles = () => API.get('/profiles');
 export const getProileById = (id) => API.get(`/profiles/${id}`);
 export const getProfileByUser = (searchQuery) => API.get(`/profiles?searchQuery=${searchQuery}`);
-export const getProfileBySearch =(searchQuery) => API.get(`/profiles/search?searchQuery=${searchQuery.search || searchQuery.year || 'none'}`);
 export const createProfile = (profile) => API.post('/profiles', profile);
 export const updateProfile = (id, updatedProfile) => API.patch(`/profiles/${id}`, updatedProfile);
 export const deleteProfile = (id) => API.delete(`/profiles/${id}`);
