@@ -22,7 +22,7 @@ export  const getInvoice = (invoiceId) => async(dispatch) =>{
         const {data} = await API.getRecordById(invoiceId);
         dispatch({type : 'GET_INVOICE_BY_ID', payload : data});
         dispatch({type : 'STOP_LOADING'});
-        
+    
     }catch(err){
         console.log(err);
     }
