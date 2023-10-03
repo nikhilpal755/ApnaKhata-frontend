@@ -178,7 +178,7 @@
     background: none;
     font-size: 15px;
     color: rgb(59, 59, 59);
-    -moz-appearance: textfield;
+    /* -moz-appearance: textfield; */
   }
   
   .amount {
