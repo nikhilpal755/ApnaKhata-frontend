@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const API = axios.create({baseURL : 'https://apna-khata-10.vercel.app'});
+const API = axios.create({baseURL : 'https://apnakhata.onrender.com'});
 
 // interceptors to check if user is logged in or not
 API.interceptors.request.use((req) =>{

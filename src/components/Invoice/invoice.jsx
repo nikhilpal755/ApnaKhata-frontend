@@ -243,7 +243,7 @@ export default function Invoice() {
       //   creator: user?.result._id || user?.result.googleId || user?.existedUser._id,
       // }))
 
-     const {data} = await axios.post('https://apnakhata01.herokuapp.com/records', {
+     const {data} = await axios.post('https://apnakhata.onrender.com/records', {
         ...invoiceData,
         subTotal: subTotal,
         total: total,
